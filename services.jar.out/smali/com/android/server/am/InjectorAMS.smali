@@ -258,7 +258,7 @@
 
     move-object/from16 v0, v18
 
-    iget-object v7, v0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v7, v0, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/IActivityStackSupervisor;
 
     .line 217
     .local v7, "dst":Lcom/android/server/am/ActivityStackSupervisor;
