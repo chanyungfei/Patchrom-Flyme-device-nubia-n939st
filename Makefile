@@ -40,14 +40,14 @@ vendor_modify_images := boot
 # The default value is app or pri-app which not need to configure.
 # You can configure the directory name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-#vendor_remove_dirs := vendor/operator/app
+vendor_remove_dirs := media/nubia preloadapp
 
 ##############################################################################
 # The value decides the file which you want to remove in the vendor directory for the ota package.
 # The default value is nothing.
 # You can configure the file name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-#vendor_remove_files := bin/zchgd
+vendor_remove_files := build.prop.bakforspec recovery-from-boot.bak media/boot.wav
 
 ##############################################################################
 # The value decides the vendor apk which you want to save in the vendor directory for the ota package.
@@ -89,7 +89,7 @@ vendor_modify_jars := android.policy com.qti.dpmframework framework oem-services
 # You can configure the board system file path which relative to the system directory in the board release.
 # You should add "lib64/libwebviewchromium.so" for 64 bit system.
 #-----------------------------------------------------------------------------
-board_saved_files := lib/libwebviewchromium.so
+board_saved_files := lib/libwebviewchromium.so lib64/libwebviewchromium.so
 
 ##############################################################################
 # The value decides which board system apk you want to remove.
@@ -143,6 +143,11 @@ board_saved_files := lib/libwebviewchromium.so
 override_property += \
     ro.flyme.romer=Po_Chan \
     ro.product.model_romer=n939st_Po_Chan
+
+override_property += \
+    ro.adb.secure=0 \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mtp,adb
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
