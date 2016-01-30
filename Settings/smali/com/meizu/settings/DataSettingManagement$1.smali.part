@@ -1,0 +1,130 @@
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 6
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
+
+    .prologue
+    const/4 v5, 0x0
+
+    .line 170
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 171
+    .local v0, "action":Ljava/lang/String;
+    const-string v2, "android.intent.action.SIM_STATE_CHANGED"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 172
+    const-string v1, "READY"
+
+    .line 173
+    .local v1, "simState":Ljava/lang/String;
+    const-string v2, "DataSettingManagement"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "receive ACTION_SIM_STATE_CHANGED SUB: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 174
+    const-string v2, "ABSENT"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 175
+    iget-object v2, p0, Lcom/meizu/settings/DataSettingManagement$1;->this$0:Lcom/meizu/settings/DataSettingManagement;
+
+    # invokes: Lcom/meizu/settings/DataSettingManagement;->setSimPrefEnabled(Z)V
+    invoke-static {v2, v5}, Lcom/meizu/settings/DataSettingManagement;->access$000(Lcom/meizu/settings/DataSettingManagement;Z)V
+
+    .line 176
+    iget-object v2, p0, Lcom/meizu/settings/DataSettingManagement$1;->this$0:Lcom/meizu/settings/DataSettingManagement;
+
+    # getter for: Lcom/meizu/settings/DataSettingManagement;->mButtonDataEnabled:Lcom/meizu/common/preference/SwitchPreference;
+    invoke-static {v2}, Lcom/meizu/settings/DataSettingManagement;->access$100(Lcom/meizu/settings/DataSettingManagement;)Lcom/meizu/common/preference/SwitchPreference;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v5}, Lcom/meizu/common/preference/SwitchPreference;->setEnabled(Z)V
+
+    .line 177
+    iget-object v2, p0, Lcom/meizu/settings/DataSettingManagement$1;->this$0:Lcom/meizu/settings/DataSettingManagement;
+
+    invoke-virtual {v2}, Lcom/meizu/settings/DataSettingManagement;->finish()V
+
+    .line 184
+    .end local v1    # "simState":Ljava/lang/String;
+    :cond_0
+    :goto_0
+    iget-object v2, p0, Lcom/meizu/settings/DataSettingManagement$1;->this$0:Lcom/meizu/settings/DataSettingManagement;
+
+    # invokes: Lcom/meizu/settings/DataSettingManagement;->initPreferenceUI()V
+    invoke-static {v2}, Lcom/meizu/settings/DataSettingManagement;->access$400(Lcom/meizu/settings/DataSettingManagement;)V
+
+    .line 185
+    return-void
+
+    .line 179
+    :cond_1
+    const-string v2, "android.intent.action.ANY_DATA_STATE"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 180
+    const-string v2, "DataSettingManagement"
+
+    const-string v3, "receive ACTION_ANY_DATA_CONNECTION_STATE_CHANGED"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 181
+    :cond_2
+    iget-object v2, p0, Lcom/meizu/settings/DataSettingManagement$1;->this$0:Lcom/meizu/settings/DataSettingManagement;
+
+    # invokes: Lcom/meizu/settings/DataSettingManagement;->isSimSwitchAction(Ljava/lang/String;)Z
+    invoke-static {v2, v0}, Lcom/meizu/settings/DataSettingManagement;->access$200(Lcom/meizu/settings/DataSettingManagement;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 182
+    iget-object v2, p0, Lcom/meizu/settings/DataSettingManagement$1;->this$0:Lcom/meizu/settings/DataSettingManagement;
+
+    # invokes: Lcom/meizu/settings/DataSettingManagement;->handleSimSwitchBroadcast(Landroid/content/Intent;)V
+    invoke-static {v2, p2}, Lcom/meizu/settings/DataSettingManagement;->access$300(Lcom/meizu/settings/DataSettingManagement;Landroid/content/Intent;)V
+
+    goto :goto_0
+.end method

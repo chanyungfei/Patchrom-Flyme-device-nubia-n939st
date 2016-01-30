@@ -1,0 +1,76 @@
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 5
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
+
+    .prologue
+    .line 55
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 56
+    .local v0, "action":Ljava/lang/String;
+    const-string v2, "android.intent.action.SIM_STATE_CHANGED"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 57
+    const-string v1, "READY"
+
+    .line 58
+    .local v1, "simState":Ljava/lang/String;
+    const-string v2, "NetworkSettingManagement"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "receive ACTION_SIM_STATE_CHANGED SUB: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 59
+    iget-object v2, p0, Lcom/meizu/settings/NetworkSettingManagement$1;->this$0:Lcom/meizu/settings/NetworkSettingManagement;
+
+    # invokes: Lcom/meizu/settings/NetworkSettingManagement;->initPreferenceUI()V
+    invoke-static {v2}, Lcom/meizu/settings/NetworkSettingManagement;->access$000(Lcom/meizu/settings/NetworkSettingManagement;)V
+
+    .line 60
+    const-string v2, "ABSENT"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 61
+    iget-object v2, p0, Lcom/meizu/settings/NetworkSettingManagement$1;->this$0:Lcom/meizu/settings/NetworkSettingManagement;
+
+    const/4 v3, 0x0
+
+    # invokes: Lcom/meizu/settings/NetworkSettingManagement;->setSimPrefEnabled(Z)V
+    invoke-static {v2, v3}, Lcom/meizu/settings/NetworkSettingManagement;->access$100(Lcom/meizu/settings/NetworkSettingManagement;Z)V
+
+    .line 64
+    .end local v1    # "simState":Ljava/lang/String;
+    :cond_0
+    return-void
+.end method

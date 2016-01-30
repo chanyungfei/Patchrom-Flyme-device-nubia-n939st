@@ -1,0 +1,76 @@
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 5
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
+
+    .prologue
+    .line 45
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 46
+    .local v0, "action":Ljava/lang/String;
+    const-string v2, "android.intent.action.SIM_STATE_CHANGED"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 47
+    const-string v1, "READY"
+
+    .line 48
+    .local v1, "simState":Ljava/lang/String;
+    const-string v2, "SimDataRoamingSettings"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "receive ACTION_SIM_STATE_CHANGED SUB: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 49
+    iget-object v2, p0, Lcom/meizu/settings/SimDataRoamingSettings$1;->this$0:Lcom/meizu/settings/SimDataRoamingSettings;
+
+    # invokes: Lcom/meizu/settings/SimDataRoamingSettings;->initPreferenceUI()V
+    invoke-static {v2}, Lcom/meizu/settings/SimDataRoamingSettings;->access$000(Lcom/meizu/settings/SimDataRoamingSettings;)V
+
+    .line 50
+    const-string v2, "ABSENT"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 51
+    iget-object v2, p0, Lcom/meizu/settings/SimDataRoamingSettings$1;->this$0:Lcom/meizu/settings/SimDataRoamingSettings;
+
+    const/4 v3, 0x0
+
+    # invokes: Lcom/meizu/settings/SimDataRoamingSettings;->setSimPrefEnabled(Z)V
+    invoke-static {v2, v3}, Lcom/meizu/settings/SimDataRoamingSettings;->access$100(Lcom/meizu/settings/SimDataRoamingSettings;Z)V
+
+    .line 54
+    .end local v1    # "simState":Ljava/lang/String;
+    :cond_0
+    return-void
+.end method
