@@ -149,6 +149,9 @@ override_property += \
     persist.service.adb.enable=1 \
     persist.sys.usb.config=mtp,adb
 
+override_property += \
+    ro.telephony.default_network=1,18,20
+
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
 # The default value is nothing.
