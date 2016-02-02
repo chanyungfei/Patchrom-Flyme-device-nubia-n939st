@@ -8838,7 +8838,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_5
+    if-nez v12, :cond_flyme_0
 
     .line 1619
     move-object/from16 v0, p0

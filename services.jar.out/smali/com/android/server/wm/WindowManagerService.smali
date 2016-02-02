@@ -7250,6 +7250,8 @@
     invoke-static {v6, v8, v9}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1702(Lcom/android/server/wm/WindowManagerService$LayoutFields;J)J
 
     :cond_5
+    invoke-virtual/range {p0 .. p1}, Lcom/android/server/wm/WindowManagerService;->mzApplayUserActivityTime(Lcom/android/server/wm/WindowState;)V
+
     iget v5, v1, Landroid/view/WindowManager$LayoutParams;->type:I
 
     .local v5, "type":I
@@ -15748,6 +15750,9 @@
 
     .line 10706
     .local v1, "focusChanged":I
+
+    invoke-static {}, Lcom/android/server/wm/InjectorWMS;->applyDarkStatusBarTheme()V
+
     if-eqz v2, :cond_1
 
     iget-object v5, p0, Lcom/android/server/wm/WindowManagerService;->mInputMethodWindow:Lcom/android/server/wm/WindowState;
@@ -34532,6 +34537,12 @@
     .restart local v22    # "origId":J
     .restart local v31    # "win":Lcom/android/server/wm/WindowState;
     :cond_1
+    move/from16 v0, p7
+
+    move-object/from16 v1, v31
+
+    invoke-static {v0, v1}, Lcom/android/server/wm/InjectorWMS;->resetMoveWindowOnWindowChanged(ILcom/android/server/wm/WindowState;)V
+
     move-object/from16 v0, v31
 
     iget-object v0, v0, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
@@ -34773,7 +34784,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wm/InjectorWMS;->adjustMoveWindowBackupWindowFlag(Lcom/android/server/wm/WindowState;Landroid/view/WindowManager$LayoutParams;)V
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v31
 
     iget-object v0, v0, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
@@ -35677,6 +35688,12 @@
     .line 3343
     .end local v11    # "displayInfo":Landroid/view/DisplayInfo;
     :cond_1d
+    move/from16 v0, p7
+
+    move-object/from16 v1, v31
+
+    invoke-static {v0, v1}, Lcom/android/server/wm/InjectorWMS;->adjustMoveWindowInputWindow(ILcom/android/server/wm/WindowState;)V
+
     move-object/from16 v0, v31
 
     iget-object v0, v0, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;

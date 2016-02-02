@@ -7776,6 +7776,8 @@
     goto :goto_1
 
     :cond_5
+    invoke-static {p0, v3}, Lcom/android/internal/policy/impl/PhoneWindowManager$FlymeInjector;->setLastSystemUiFlagsIgnoreRecentPanel(Lcom/android/internal/policy/impl/PhoneWindowManager;I)V
+
     iput v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLastSystemUiFlags:I
 
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLastFocusNeedsMenu:Z
@@ -13736,7 +13738,7 @@
 
     or-int/lit8 v0, v0, 0x1
 
-    goto/16 :goto_2
+    goto/16 :goto_flyme_0
 
     :cond_11
     iget-object v7, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarController:Lcom/android/internal/policy/impl/BarController;
@@ -15792,6 +15794,8 @@
 
     .line 1720
     :cond_6
+    invoke-static/range {p0 .. p1}, Lcom/android/internal/policy/impl/PhoneWindowManager$FlymeInjector;->initExtFlymeFields(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/content/Context;)V
+
     return-void
 
     .line 1512
@@ -16899,7 +16903,7 @@
 
     .line 3086
     :cond_1b
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getTelecommService()Landroid/telecom/TelecomManager;
+    invoke-static {}, Lcom/android/internal/policy/impl/PhoneWindowManager$FlymeInjector;->getFlymeTelecommService()Landroid/telecom/TelecomManager;
 
     move-result-object v44
 
@@ -17016,6 +17020,18 @@
     .local v13, "attrs":Landroid/view/WindowManager$LayoutParams;
     :goto_9
     if-eqz v13, :cond_24
+
+    invoke-static/range {p1 .. p1}, Lcom/android/internal/policy/impl/PhoneWindowManager$FlymeInjector;->mzInterceptHomeKey(Landroid/view/WindowManagerPolicy$WindowState;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_flyme_0
+
+    const-wide/16 v6, 0x0
+
+    return-wide v6
+
+    :cond_flyme_0
 
     .line 3114
     iget v0, v13, Landroid/view/WindowManager$LayoutParams;->type:I
@@ -18811,7 +18827,7 @@
 
     and-int v4, v4, v34
 
-    if-eqz v4, :cond_61
+    if-eqz v4, :cond_flyme_1
 
     .line 3483
     const-wide/16 v6, -0x1
@@ -18823,6 +18839,28 @@
     const-wide/16 v6, 0x0
 
     goto/16 :goto_6
+
+    :cond_flyme_1
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p2
+
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager$FlymeInjector;->preventVolumeKeyForTelephony(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/KeyEvent;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_flyme_2
+
+    const-wide/16 v6, -0x1
+
+    return-wide v6
+
+    :cond_flyme_2
+
+    const-wide/16 v6, 0x0
+
+    return-wide v6
 .end method
 
 .method public interceptKeyBeforeQueueing(Landroid/view/KeyEvent;I)I
@@ -19344,6 +19382,8 @@
     .line 5463
     .restart local v21    # "useHapticFeedback":Z
     :sswitch_0
+    invoke-direct/range {p0 .. p1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->mzInterceptVolumeKeyUpForTelephony(Landroid/view/KeyEvent;)V
+
     const/16 v22, 0x19
 
     move/from16 v0, v22
@@ -19436,6 +19476,8 @@
     invoke-static/range {v22 .. v23}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual/range {v20 .. v20}, Landroid/telecom/TelecomManager;->silenceRinger()V
+
+    invoke-direct/range {p0 .. p1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->mzInterceptVolumeKeyDownForTelephony(Landroid/view/KeyEvent;)V
 
     and-int/lit8 v19, v19, -0x2
 

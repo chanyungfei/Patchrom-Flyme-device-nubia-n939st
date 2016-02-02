@@ -19,7 +19,7 @@
 
 .field public static final RSN:I = 0x1
 
-.field public static final WAPI:I = 0x2
+#.field public static final WAPI:I = 0x2
 
 .field public static final WPA:I = 0x0
 
@@ -36,7 +36,7 @@
     .line 126
     const/4 v0, 0x3
 
-    add-int/lit8 v0, v0, 0x1
+    #add-int/lit8 v0, v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
 

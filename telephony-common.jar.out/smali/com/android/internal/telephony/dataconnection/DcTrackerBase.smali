@@ -699,6 +699,8 @@
 
     move-result-object v1
 
+    const-string v1, "mobile_data"
+
     invoke-static {v0, v1, v10}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
@@ -3989,6 +3991,8 @@
 
     move-result-object v3
 
+    const-string v3, "mobile_data"
+
     invoke-static {v0, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
@@ -4057,6 +4061,8 @@
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
+
+    const-string v3, "data_roaming"
 
     invoke-static {v0, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
     :try_end_0
@@ -7253,6 +7259,9 @@
     move v0, v1
 
     :goto_0
+
+    const-string v4, "mobile_data"
+
     invoke-static {v3, v4, v0}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 1405
@@ -7754,6 +7763,9 @@
     const/4 v1, 0x1
 
     :goto_0
+
+    const-string v2, "data_roaming"
+
     invoke-static {v0, v2, v1}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 783

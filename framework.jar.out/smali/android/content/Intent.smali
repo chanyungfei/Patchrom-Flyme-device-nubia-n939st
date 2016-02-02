@@ -893,6 +893,8 @@
 
     .line 4108
     :cond_5
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;Landroid/content/Intent;)V
+    
     return-void
 .end method
 
@@ -4893,6 +4895,8 @@
     iput v4, p0, Landroid/content/Intent;->mContentUserHint:I
 
     :cond_13
+
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->copyMeizuFlag(Landroid/content/Intent;Landroid/content/Intent;)V
     return v0
 
     :cond_14
@@ -8180,6 +8184,8 @@
 
     iput-object v2, p0, Landroid/content/Intent;->mSmartShowExtras:Landroid/os/Bundle;
 
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->readIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
+
     return-void
 .end method
 
@@ -10044,6 +10050,8 @@
     iget-object v2, p0, Landroid/content/Intent;->mSmartShowExtras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
+
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->writeIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
 
     return-void
 

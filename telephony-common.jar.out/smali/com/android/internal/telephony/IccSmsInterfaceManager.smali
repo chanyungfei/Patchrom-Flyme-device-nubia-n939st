@@ -5050,7 +5050,7 @@
 
     move-result v3
 
-    invoke-virtual {v1, v2, v3, p1}, Landroid/app/AppOpsManager;->noteOp(IILjava/lang/String;)I
+    invoke-virtual {v1, v2, v3, p1}, Landroid/app/AppOpsManager;->hook_noteOp(IILjava/lang/String;)I
 
     move-result v1
 
