@@ -16,6 +16,8 @@
 
 
 # static fields
+.field public static DEFAULT_STREAM_VOLUME:[I = null
+
 .field public static final ACTION_ANALOG_AUDIO_DOCK_PLUG:Ljava/lang/String; = "android.media.action.ANALOG_AUDIO_DOCK_PLUG"
 
 .field public static final ACTION_AUDIO_BECOMING_NOISY:Ljava/lang/String; = "android.media.AUDIO_BECOMING_NOISY"
@@ -595,6 +597,12 @@
 
     sput-object v0, Landroid/media/AudioManager;->sAudioPatchesCached:Ljava/util/ArrayList;
 
+    invoke-static {}, Landroid/media/AudioService;->getDefaultStreamVolume()[I
+
+    move-result-object v0
+
+    sput-object v0, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
+
     return-void
 
     .line 421
@@ -674,7 +682,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120015
+    const v1, #android:bool@config_useMasterVolume#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -689,7 +697,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120016
+    const v1, #android:bool@config_useVolumeKeySounds#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -704,7 +712,7 @@
 
     move-result-object v0
 
-    const v1, 0x112007d
+    const v1, #android:bool@config_useFixedVolume#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -3270,7 +3278,7 @@
 
     move-result-object v0
 
-    const v1, 0x1120051
+    const v1, #android:bool@config_bluetooth_sco_off_call#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

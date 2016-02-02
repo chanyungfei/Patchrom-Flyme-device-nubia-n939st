@@ -1460,7 +1460,7 @@
 
     move-result-object v17
 
-    const v19, 0x112009a
+    const v19, #android:bool@config_global_phone_enabled#t
 
     move-object/from16 v0, v17
 
@@ -2667,5 +2667,17 @@
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 488
+    return-void
+.end method
+
+.method public static setDataSubscription(J)V
+    .locals 2
+    .param p0, "subId"    # J
+
+    .prologue
+    long-to-int v0, p0
+
+    invoke-static {v0}, Lcom/android/internal/telephony/PhoneFactory;->setDataSubscription(I)V
+
     return-void
 .end method

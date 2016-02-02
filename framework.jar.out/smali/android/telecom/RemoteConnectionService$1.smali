@@ -1259,3 +1259,14 @@
     .line 269
     return-void
 .end method
+
+.method public setCallCapabilities(Ljava/lang/String;I)V
+    .locals 0
+    .param p1, "callId"    # Ljava/lang/String;
+    .param p2, "callCapabilities"    # I
+
+    .prologue
+    invoke-virtual {p0, p1, p2}, Landroid/telecom/RemoteConnectionService$1;->setConnectionCapabilities(Ljava/lang/String;I)V
+
+    return-void
+.end method
