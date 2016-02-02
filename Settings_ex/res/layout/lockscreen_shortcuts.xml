@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/phone_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/lockscreen_shortcuts_phone_background" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="15.0sp" android:textColor="#ff424242" android:gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/lockscreen_message" android:layout_below="@id/phone_button" android:layout_alignStart="@id/phone_button" android:layout_alignEnd="@id/phone_button" />
+    <RelativeLayout android:paddingBottom="@dimen/phone_bottom_padding" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="@dimen/phone_height" android:layout_alignBottom="@id/phone_button" android:layout_marginStart="@dimen/phone_side_padding" android:layout_marginEnd="@dimen/phone_side_padding" android:layout_alignStart="@id/phone_button" android:layout_alignEnd="@id/phone_button">
+        <ImageView android:id="@id/left_button" android:clickable="true" android:layout_width="@dimen/lockscreen_icon_size" android:layout_height="@dimen/lockscreen_icon_size" android:layout_alignParentBottom="true" android:layout_marginStart="@dimen/lockscreen_icon_side_padding" android:layout_alignParentStart="true" />
+        <ImageView android:id="@id/middle_button" android:layout_width="@dimen/lockscreen_icon_size" android:layout_height="@dimen/lockscreen_icon_size" android:tint="#ff333333" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/right_button" android:clickable="true" android:layout_width="@dimen/lockscreen_icon_size" android:layout_height="@dimen/lockscreen_icon_size" android:layout_alignParentBottom="true" android:layout_marginEnd="@dimen/lockscreen_icon_side_padding" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</RelativeLayout>

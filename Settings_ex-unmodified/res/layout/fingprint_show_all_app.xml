@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:paddingStart="8.0dip" android:paddingEnd="?android:scrollbarSize">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:ellipsize="marquee" android:gravity="center" android:id="@id/title" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fingerprint_start_app_title" android:singleLine="true" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:ellipsize="end" android:id="@id/summary" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:layout_alignLeft="@android:id/title" />
+        </LinearLayout>
+        <Switch android:theme="@style/ThemeOverlay.SwitchBar" android:layout_gravity="center" android:orientation="vertical" android:id="@id/startApp_switchWidget" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" />
+    </LinearLayout>
+    <View android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="2.0px" />
+    <TextView android:textColor="#ff00998a" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="12.0dip" android:layout_marginBottom="6.0dip" android:text="@string/fingerprint_fast_start_app" />
+    <View android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="2.0px" />
+    <ListView android:id="@id/fingprint_all_app_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

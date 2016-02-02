@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:title="@string/wifi_tether_configure_ap_text" android:key="wifi_ap_ssid_and_security" />
+    <PreferenceCategory android:persistent="false" android:title="@string/wifi_ap_list_category" android:key="ap_device_list" />
+</PreferenceScreen>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/breath_light_title" settings:keywords="@string/keywords_display_breath_light"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings_ex">
+    <SwitchPreference android:persistent="false" android:title="@string/breathlight_for_charging" android:key="breathlight_for_charging" android:summary="@string/breathlight_for_charging_info" settings:keywords="@string/keywords_display_breath_light" />
+    <SwitchPreference android:persistent="false" android:title="@string/breathlight_for_msg" android:key="breathlight_for_event_missing" android:summary="@string/breathlight_for_msg_info" settings:keywords="@string/keywords_display_breath_light" />
+    <SwitchPreference android:persistent="false" android:title="@string/breathlight_for_third_msg" android:key="breathlight_for_third_msg" android:summary="@string/breathlight_for_third_msg_info" settings:keywords="@string/keywords_display_breath_light" />
+    <com.android.settings_ex.BreathlightSeekBarPreference android:title="@string/breath_light_brightness" android:key="breathlight_brightness_seekbar" />
+</PreferenceScreen>

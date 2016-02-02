@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.multisimsettings">
+    <PreferenceCategory android:title="@string/sound_category_calls_title" />
+    <com.android.settings.DefaultRingtonePreference android:persistent="false" android:title="@string/ringtone_title" android:key="ringtone" android:summary="@string/ringtone_summary" android:dialogTitle="@string/ringtone_title" android:ringtoneType="ringtone" />
+</PreferenceScreen>

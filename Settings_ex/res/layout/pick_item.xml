@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:gravity="center_vertical" android:id="@id/text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeightSmall" android:drawableBottom="@drawable/dotted_line_480px" android:drawablePadding="8.0dip" android:paddingStart="11.0dip" android:paddingEnd="11.0dip" />
+    <View android:background="@drawable/dotted_line_480px" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

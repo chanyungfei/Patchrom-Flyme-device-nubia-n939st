@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:background="@drawable/title_bar_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/backBtn" android:background="@drawable/back_button_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="24.0sp" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:text="@string/ringtone_title" />
+        </LinearLayout>
+        <TabWidget android:id="@android:id/tabs" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <FrameLayout android:id="@android:id/tabcontent" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </LinearLayout>
+</TabHost>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="12.0dip" android:layout_marginStart="22.0dip" android:layout_marginEnd="22.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hotspot_settings_desc" />
+    <TextView android:textSize="18.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/hotspot_settings_indication" />
+    <TextView android:textSize="18.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/hotspot_settings_indication_step1" />
+    <TextView android:textSize="18.0sp" android:id="@id/hotspot_help_select_ssid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hotspot_settings_indication_step2" />
+    <TextView android:textSize="18.0sp" android:id="@id/hotspot_help_ssid_pwd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hotspot_settings_indication_step3_ssid" />
+    <TextView android:textSize="18.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hotspot_settings_indication_step4" />
+</LinearLayout>

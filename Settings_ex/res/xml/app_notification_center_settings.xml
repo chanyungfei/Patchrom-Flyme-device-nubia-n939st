@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/app_notifications_title" android:key="app_notification_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference android:persistent="false" android:title="@string/accept_app_notification" android:key="block" android:disableDependentsState="true" />
+    <SwitchPreference android:persistent="true" android:title="@string/show_lockscreen" android:key="lockscreen" />
+    <SwitchPreference android:persistent="true" android:title="@string/show_statusbar" android:key="statusbar" />
+    <SwitchPreference android:persistent="true" android:title="@string/breathe_light_onoff" android:key="breathe" />
+    <PreferenceScreen android:textAppearance="?android:textAppearanceSmall" android:layout_marginLeft="20.0dip" android:title="@string/lockscreen_notify_style" android:key="lockscreen_notify_style" />
+    <com.android.settings_ex.notification.NotificationRadioPreference android:checked="true" android:title="@string/nubia_support" android:key="nubia_support" android:summary="@string/nubia_support_summary2" />
+    <com.android.settings_ex.notification.NotificationRadioPreference android:title="@string/nubia_support" android:key="hide_content" android:summary="@string/nubia_support_summary4" />
+</PreferenceScreen>
