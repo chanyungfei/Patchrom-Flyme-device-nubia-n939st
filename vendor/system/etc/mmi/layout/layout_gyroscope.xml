@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2015 Qualcomm Technologies, Inc. All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+-->
+<layout>
+   <include layout="header.xml"/>
+	<button
+        name="instruction"
+        text="gyro_instruction"
+        w_rel="100"
+        h_rel="15"
+        x_rel="0"
+        y_rel="12"
+        color="0x4B67B37D" />
+	 <textview
+        name="display"
+        text=""
+        w_rel="100"
+        h_rel="70"
+        x_rel="4"
+        y_rel="28" />
+	<button
+        name="xp"
+        text="btn_xp"
+        w_rel="16"
+        h_rel="8"
+        x_rel="26"
+        y_rel="46"
+        color="0x4B67B37D" />
+    <button
+        name="xn"
+        text="btn_xn"
+        w_rel="16"
+        h_rel="8"
+        x_rel="26"
+        y_rel="56"
+        color="0x4B67B37D" />
+    <button
+        name="yp"
+        text="btn_yp"
+        w_rel="16"
+        h_rel="8"
+        x_rel="46"
+        y_rel="46"
+        color="0x4B67B37D" />
+    <button
+        name="yn"
+        text="btn_yn"
+        w_rel="16"
+        h_rel="8"
+        x_rel="46"
+        y_rel="56"
+        color="0x4B67B37D" />
+    <button
+        name="zp"
+        text="btn_zp"
+        w_rel="16"
+        h_rel="8"
+        x_rel="66"
+        y_rel="46"
+        color="0x4B67B37D" />
+	<button
+        name="zn"
+        text="btn_zn"
+        w_rel="16"
+        h_rel="8"
+        x_rel="66"
+        y_rel="56"
+        color="0x4B67B37D" />
+   <include layout="footer.xml"/>
+</layout>

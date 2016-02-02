@@ -1,0 +1,4 @@
+mkdir /cache/recovery/
+echo --wipe_data > /cache/recovery/command
+reboot recovery
+

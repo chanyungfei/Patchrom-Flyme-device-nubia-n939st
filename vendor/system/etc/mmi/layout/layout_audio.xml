@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2014-2015 Qualcomm Technologies, Inc. All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+-->
+<layout>
+	<include layout="header.xml"/>
+	<button
+        name="indication"
+        text=""
+        w_rel="100"
+        h_rel="10"
+        x_rel="0"
+        y_rel="12"
+        color="0x4B67B37D" />
+   <button
+        name="combspeaker"
+        text="btn_combspeaker"
+		onclick="do_extra_spk"
+        w_rel="40"
+        h_rel="15"
+        x_rel="5"
+        y_rel="24"
+        color="0x007D7DFF" />
+
+   <button
+        name="combreceiver"
+        text="btn_combreceiver"
+		onclick="do_extra_rec"
+        w_rel="40"
+        h_rel="15"
+        x_rel="55"
+        y_rel="24"
+        color="0x007D7DFF" />
+
+   <button
+        name="combmainmic"
+        text="btn_combmmic"
+		onclick="do_extra_mmic"
+        w_rel="40"
+        h_rel="15"
+        x_rel="5"
+        y_rel="44"
+        color="0x007D7DFF" />
+
+   <button
+        name="combsecmic"
+        text="btn_combsmic"
+		onclick="do_extra_smic"
+        w_rel="40"
+        h_rel="15"
+        x_rel="55"
+        y_rel="44"
+        color="0x007D7DFF" />
+
+   <button
+        name="combheadset"
+        text="btn_combheadset"
+		onclick="do_extra_headset"
+        w_rel="40"
+        h_rel="15"
+        x_rel="5"
+        y_rel="64"
+        color="0x007D7DFF" />
+
+   <button
+        name="hangup"
+        text="btn_hangup"
+        w_rel="40"
+        h_rel="15"
+        x_rel="55"
+        y_rel="64"
+        color="0x007D7DFF" />
+    <include layout="footer.xml"/>
+</layout>
